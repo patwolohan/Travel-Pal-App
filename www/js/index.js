@@ -371,13 +371,13 @@ function tryingFile() {
     console.log(cordova.file);
 
     // Displaying on front end
-    //var visited = "";
-    visited += "You have Visited: " + country + "<br>";
-    visited += "City Visited: " + city + "<br>";"<br>";
-    visited += "Town Visited: " + town + "<br>";"<br>";
-    visited += "Local Currency: " + currencyLocal + "<br>";
-    visited += "Rate Local: " + rate + "<br>";
-    document.getElementById('file').innerHTML = visited;
+    
+    visited += " You have Visited: " + country + "<br>";
+    visited += " City Visited: " + city + "<br>";"<br>";
+    visited += " Town Visited: " + town + "<br>";"<br>";
+    visited += " Local Currency: " + currencyLocal + "<br>";
+    visited += " Rate Local: " + rate;
+    
     
    
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
