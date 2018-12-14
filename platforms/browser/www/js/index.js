@@ -54,6 +54,7 @@ var city = "";
 var town = "";
 var visited = "";
 var image;
+var rate = 1;
 
 // ----------- VIBRATION
 
@@ -238,7 +239,7 @@ function opencageapi(lat, lng) {
 
 // ---------- CURRENCY CONVERSION RATES
 
-var rate = 1;
+
 
 function conversion() {
     //US Dollar String Variable
