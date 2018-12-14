@@ -103,7 +103,7 @@ function cameraCallback(imageData) {
     
    
 }
-
+getLocation();
 
 // ----------- GEOLOCATION
 
@@ -308,7 +308,6 @@ function convert(rate) {
     document.getElementById("enteredLocal").innerHTML = "Amount Entered Local: " + in_amtLocal + "<br>";
     document.getElementById("enteredDollar").innerHTML = "Amount Entered Dollar: " + in_amtDollar + "<br>";
     document.getElementById("rate").innerHTML = "Current Rate: " + rate + "<br>";
-
     //output conversions to screen
     document.getElementById("convertedLocal").innerHTML = " Local # " + local.toFixed(2);
     document.getElementById("convertedDollar").innerHTML = " Dollar $ " + dollar.toFixed(2);
@@ -328,20 +327,10 @@ function reset() {
 
 
 // ----------- WEATHER API
-/* $(document).ready(function loadData() {
-    var weatherAPIXU = "http://api.apixu.com/v1/current.json?key=XXXXXXXXXXXX&q=Toronto";
-    $.getJSON(weatherAPIXU, function(data) {
-        var forecast = data.current.temp_c;
-        var weather = $(".weather");
-        weather.append(forecast + '° C');
-    }).error(function(e) {
-        $(".weather").append('Sorry! Not Loaded');
-    });
-    $('.weather').submit(loadData);
-}); */
+
 
 function weatherapi(lat, lng) {
-    $.getJSON(" http://api.apixu.com/v1/current.json?key=522079c85fee417f922184437182811&q=" + lat + ', ' + lng + "", function (data) {
+    $.getJSON("http://api.apixu.com/v1/current.json?key=522079c85fee417f922184437182811&q=" + lat + ', ' + lng + "", function (data) {
         console.log(data);
 
         //Declare & set variables  for temperature, FeelsLike temperature, Weather Text, & Icon img        
