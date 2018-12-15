@@ -141,7 +141,7 @@ function geoCallback(position) {
 
     //call map coords delay 2 seconds
     setTimeout(function () {
-        initMap2(lat,lng);
+        initMap(lat,lng);
     }, 2000);
    
 
@@ -165,7 +165,7 @@ getLocation();
 
 
 // THIS IS A NEW MAP USING THE LOCATION FROM THE GPS SENSOR
-function initMap2(lat, lng) {
+function initMap(lat, lng) {
     var pos = {
         lat: lat,
         lng: lng
@@ -249,6 +249,7 @@ function conversion() {
     console.log(currencyConc);
 
     //console.log("conversion called 4");
+    //using jquery query the apilayer API and retrieve the currency data
     $.getJSON("http://www.apilayer.net/api/live?access_key=2460d56dd4475d384807c7a7844c1281", function (data) {
 
         var quotesForView = "";
@@ -329,7 +330,7 @@ function reset() {
 
 // ----------- WEATHER API
 
-
+//Using JQuery to retreive the JSON data from weather API Apixu
 function weatherapi(lat, lng) {
     $.getJSON("http://api.apixu.com/v1/current.json?key=522079c85fee417f922184437182811&q=" + lat + ', ' + lng + "", function (data) {
         console.log(data);
@@ -455,6 +456,7 @@ function tryWriteFile() {
             toFrontEnd += "+<br> File: travel.txt written successfully!";
           document.getElementById('filewritep').innerHTML = toFrontEnd;
 
+            //visited object passed to dataObj   
             var dataObj = new Blob([visited], {
                 type: 'text/plain'
             });
@@ -558,7 +560,7 @@ function readFile(fileEntry) {
         // Create the reader
         var reader = new FileReader();
 
-
+        //read 
         reader.onloadend = function () {
             var read = " ";
             read = this.result;
